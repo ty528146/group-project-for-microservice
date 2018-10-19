@@ -19,6 +19,9 @@ router.get('/profile',authenticationMiddleware(),function(req,res,next){
 router.get('/login/fail',authenticationMiddleware(),function(req,res,next){
     res.redirect('/');
 });
+router.get('/register/fail',authenticationMiddleware(),function(req,res,next){
+    res.render('index', { title: 'registration fails' });
+});
 router.get('/customer/login',authenticationMiddleware(), function(req, res, next) {
     console.log(req.user);
     console.log(req.isAuthenticated());
@@ -34,13 +37,19 @@ router.get('/logout',function(req,res,next){
     res.redirect('/');
 })
  router.post('/customer/register', function(req, res, next){
+     //req.checkBody('username','username should be 3-100 characters long').len(3,100);
+     req.checkBody('email','email should be 3-100 characters long').len(3,100);
+     req.checkBody('email','email should be valid').isEmail();
+     req.checkBody('password','email should be 3-100 characters long').len(3,100);
+     req.checkBody('repassword','email should be 3-100 characters long').equals(req.body.password);
   const errors = req.validationErrors();
    if (errors) {
-     console.log(`errors: ${JSON.stringify(errors)}`);
+     //console.log(`errors: ${JSON.stringify(errors)}`);
        res.render('customer/register', {
          title: 'Registration Fails!',
-         errors: errors
-       });
+          errors: errors
+        });
+      // res.redirect('/register/fail');
    }
      const email = req.body.email;
      const password = req.body.password;
