@@ -1,0 +1,60 @@
+
+
+<<h1>{{title}}</h1>
+{{#if errors}}
+    {{#each errors}}
+        {{this.msg}}
+    {{/each}}
+{{/if}}
+<!--<div class="row">-->
+
+    <!--<div class = "col-md-4 col-md-offset-4">-->
+        <!--<div class="form-popup" id="myForm">-->
+            <!--<form action="/customer/login" class="form-container">-->
+                <!--<h1>Login</h1>-->
+
+                <!--<div class="form-group">-->
+                    <!--<label for="alias-name">Username</label>-->
+                    <!--<input type = "username" name="username"class="form-control" placeholder="Username" required>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="email">Email</label>-->
+                    <!--<input type = "text" name="email" class="form-control" placeholder="Email" required>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label for="password">Password</label>-->
+                    <!--<input type = "password" name="password" class="form-control" placeholder="Password"  required>-->
+                <!--</div>-->
+
+                <!--<button id ="onclick rightreading" class="btn btn-info">Login</button>-->
+                <!--<button type="button" id="but2" class="btn cancel" onclick="closeForm()">Close</button>-->
+                <!--<button type="button" id ="onclick" class="btn btn-info" onclick="window.location.href='/customer/register'"> Register </button>-->
+            <!--</form>-->
+        <!--</div>-->
+
+        <!--&lt;!&ndash;<button type="button" class="btn btn-info" onclick="window.location.href='/customer/register'"> Register </button>-->
+            <!--<button type="button" class="btn btn-info rightbutton fadefire">Login</button>&ndash;&gt;-->
+
+    <!--</div>-->
+<!--</div>-->
+
+<script>
+
+
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+
+
+</script>
+/*
+    $(document).ready(function() {
+        $(".displayoption").hide();
+    });
+    $(".fadefire").on("click",function(){$(".displayoption").toggle();});*/
+
+

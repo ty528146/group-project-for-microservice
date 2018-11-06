@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<p> Hi! Welcome to the {{title}}</p>
+<!--<button class="open-button" onclick="openForm()">Quick Login</button>-->
+<div class="form-popup" id="myForm">
+    <!--<form action="/customer/login" class="form-container" method="post">-->
+    <form action="/" class="form-container" method="post">
+        <h1>Login</h1>
+
+        <div class="form-group">
+            <label for="alias-name">Username</label>
+            <input type = "username" name="username"class="form-control" placeholder="Username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type = "text" name="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type = "password" name="password" class="form-control" placeholder="Password"  required>
+        </div>
+
+
+        <button type="submit" class="btn btn-info">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        <button type="button" id ="onclick" class="btn btn-info" onclick="window.location.href='/customer/register'"> Register </button>
+    </form>
+</div>
